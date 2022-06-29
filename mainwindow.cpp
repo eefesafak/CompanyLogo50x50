@@ -57,8 +57,9 @@ QPoint MainWindow::contourDetection(const QString path)
         for(int j=0; j<height; j+=50)
         {
             square50x50 = thresh(Range(i, i+50), Range(j, j+50));
-            if(contoursArea(square50x50 ) < min)
+            if(contoursArea(square50x50) < min)
             {
+                min = contoursArea(square50x50);
                 point = QPoint(j, i);
             }
         }
